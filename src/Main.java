@@ -8,7 +8,7 @@ public class Main {
 		
 		String jdbcURL = "jdbc:postgresql://localhost:5431/Autohändler";
 		String username = "postgres";
-		String password = "0201ALis..";
+		String password = "password";
 		
 		try {
 			Connection connection = DriverManager.getConnection(jdbcURL, username, password);
