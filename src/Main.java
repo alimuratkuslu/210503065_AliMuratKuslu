@@ -168,15 +168,16 @@ public class Main {
 		    	System.out.println("Geben Sie den Namen des Filtertyps ein ");
 		    	String filter_name = sc.next();
 		    	
-		    	FilterTyp f1 = new FilterTyp(filter_id, filter_name);
-		    	filter.add(f1);
+		    	FilterTyp f = Verwaltungspersonal.addFilterTyp(filter_id, filter_name);
+		    	
+		    	filter.add(f);
 		    	
 		    	
 		    	
 		    case 8:
 		    	for(int i = 0; i < filter.size(); i++) {
-		    		FilterTyp f = (FilterTyp) filter.get(i);
-		    		System.out.println(f); 
+		    		FilterTyp fil = (FilterTyp) filter.get(i);
+		    		System.out.println(fil); 
 		    	}
 		    	
 		    }
