@@ -1,7 +1,10 @@
+import java.util.ArrayList;
 
 public class FilterTyp {
 	private String filterTyp_id;
 	private String filterTyp_name;
+	
+	ArrayList<FilterTyp> filterTyp = new ArrayList<>();
 	
 	
 	public FilterTyp(String filterTyp_id, String filterTyp_name) {
