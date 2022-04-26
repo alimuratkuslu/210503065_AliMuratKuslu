@@ -3,11 +3,11 @@ public class Person {
 	
 	private String name;
 	private String vorname;
-	private int telefonNummer;
-	private int ausweisNummer;
+	private String telefonNummer;
+	private String ausweisNummer;
 	private String email;
 	
-	public Person(String name, String vorname, int telefonNummer, int ausweisNummer, String email) {
+	public Person(String name, String vorname, String telefonNummer, String ausweisNummer, String email) {
 		super();
 		this.name = name;
 		this.vorname = vorname;
@@ -30,17 +30,17 @@ public class Person {
 		this.vorname = vorname;
 	}
 	
-	public int getTelefonNummer() {
+	public String getTelefonNummer() {
 		return telefonNummer;
 	}
-	public void setTelefonNummer(int telefonNummer) {
+	public void setTelefonNummer(String telefonNummer) {
 		this.telefonNummer = telefonNummer;
 	}
 	
-	public int getAusweisNummer() {
+	public String getAusweisNummer() {
 		return ausweisNummer;
 	}
-	public void setAusweisNummer(int ausweisNummer) {
+	public void setAusweisNummer(String ausweisNummer) {
 		this.ausweisNummer = ausweisNummer;
 	}
 	
@@ -51,5 +51,18 @@ public class Person {
 		this.email = email;
 	}
 	
+	public static boolean isIdValid(String s) {
+		if(s.length() == 7) {
+			return true;
+		}
+		return false;
+	}
+	
+	public static boolean isIdDigit(String s) {
+		if(s.matches("[0-9]+")) {
+			return true;
+		}
+		return false;
+	}
 	
 }
