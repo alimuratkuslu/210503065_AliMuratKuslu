@@ -12,6 +12,7 @@ public class Main {
 		ArrayList<Kunde> kunden = new ArrayList<>();
 		ArrayList<Mitarbeiter> mitarbeiter = new ArrayList<>();
 		ArrayList<Verwaltungspersonal> verwaltpersonal = new ArrayList<>();
+		ArrayList<FilterTyp> filter = new ArrayList<>();
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -24,6 +25,8 @@ public class Main {
 		    System.out.println("  4- Kunde auflisten");
 		    System.out.println("  5- Verwaltungspersonal hinzufügen");
 		    System.out.println("  6- Verwaltungspersonal auflisten");
+		    System.out.println("  7- Filtertyp hinzufügen");
+		    System.out.println("  8- Filtertyp auflisten");
 		    System.out.println("  100 - Programm beenden");
 		    
 		    opt = sc.nextInt();
@@ -157,20 +160,29 @@ public class Main {
 		    		Verwaltungspersonal v = (Verwaltungspersonal) verwaltpersonal.get(i);
 		    		System.out.println(v);
 		    	}
+		    
+		    case 7:
+		    	System.out.println("Geben Sie die Filtertyp-ID ein ");
+		    	String filter_id = sc.next();
+		    	
+		    	System.out.println("Geben Sie den Namen des Filtertyps ein ");
+		    	String filter_name = sc.next();
+		    	
+		    	FilterTyp f1 = new FilterTyp(filter_id, filter_name);
+		    	filter.add(f1);
+		    	
+		    	
+		    	
+		    case 8:
+		    	for(int i = 0; i < filter.size(); i++) {
+		    		FilterTyp f = (FilterTyp) filter.get(i);
+		    		System.out.println(f); 
+		    	}
 		    	
 		    }
 		    
 		    	
 		}
-		
-
-		
-		
-		
-		
-		
-		
-		
 		
 		String jdbcURL = "jdbc:postgresql://localhost:5431/Autohändler";
 		String username = "postgres";
