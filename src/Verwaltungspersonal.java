@@ -51,4 +51,10 @@ public class Verwaltungspersonal extends Person{
 	public void setPasswort(String passwort) {
 		this.passwort = passwort;
 	}
+	
+	public static FilterTyp addFilterTyp(String id, String name) {
+		FilterTyp f = new FilterTyp(id, name);
+		
+		return f;
+	}
 }
