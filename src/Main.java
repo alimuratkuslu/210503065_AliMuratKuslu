@@ -11,6 +11,7 @@ public class Main {
 		
 		ArrayList<Kunde> kunden = new ArrayList<>();
 		ArrayList<Mitarbeiter> mitarbeiter = new ArrayList<>();
+		ArrayList<Verwaltungspersonal> verwaltpersonal = new ArrayList<>();
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -21,6 +22,8 @@ public class Main {
 		    System.out.println("  2- Mitarbeiter auflisten");
 		    System.out.println("  3- Kunde hinzufügen");
 		    System.out.println("  4- Kunde auflisten");
+		    System.out.println("  5- Verwaltungspersonal hinzufügen");
+		    System.out.println("  6- Verwaltungspersonal auflisten");
 		    System.out.println("  100 - Programm beenden");
 		    
 		    opt = sc.nextInt();
@@ -109,7 +112,51 @@ public class Main {
 		    		Kunde k = (Kunde) kunden.get(i);
 		    		System.out.println(k);
 		    	}
+		    
+		    case 5:
+		    	System.out.println("Geben Sie die Verwaltungsmitarbeiter-ID ein ");
+		    	String verwalt_id = sc.next();
 		    	
+		    	if(Kunde.isIdValid(verwalt_id) && Kunde.isIdDigit(verwalt_id)){
+					System.out.println("Geben Sie den Namen des Verwaltungsmitarbeiters ein");
+	        		String verwalt_name = sc.next();
+	        	
+	        		System.out.println("Geben Sie den Vornamen ein");
+	        		String verwalt_vorname = sc.next();
+	        	
+	        		System.out.println("Geben Sie die Telefonnummer ein");
+	        		String nummer = sc.next();
+	        	
+	        		System.out.println("Geben Sie die ID-Nummer ein");
+	        		String awnummer = sc.next();
+	        		
+	        		System.out.println("Geben Sie die E-Mail-Adresse ein");
+	        		String email = sc.next();
+	        		
+	        		System.out.println("Geben Sie die Versicherungsart ein");
+	        		String position = sc.next();
+	        		
+	        		System.out.println("Geben Sie die Adresse ein");
+	        		String svnummer = sc.next();
+	        		
+	        		System.out.println("Geben Sie den Benutzernamen ein");
+	        		String bkonto = sc.next();
+	        		
+	        		System.out.println("Geben Sie das Passwort ein");
+	        		String passwort = sc.next();
+
+					Verwaltungspersonal v1 = new Verwaltungspersonal(verwalt_name, verwalt_vorname, nummer, awnummer, email, verwalt_id, position, svnummer, bkonto, passwort);
+					verwaltpersonal.add(v1);
+				}
+		    	else {
+		    		System.out.println("Geben Sie eine korrekte ID ein");
+		    	}
+		    	
+		    case 6:
+		    	for(int i = 0; i < verwaltpersonal.size(); i++) {
+		    		Verwaltungspersonal v = (Verwaltungspersonal) verwaltpersonal.get(i);
+		    		System.out.println(v);
+		    	}
 		    	
 		    }
 		    
