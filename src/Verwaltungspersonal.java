@@ -1,14 +1,14 @@
 
 public class Verwaltungspersonal extends Person{
 	
-	private int personal_id;
+	private String personal_id;
 	private String position;
-	private int sozialVersicherungsNummer;
+	private String sozialVersicherungsNummer;
 	private String benutzerKonto;
 	private String passwort;
 	
-	public Verwaltungspersonal(String name, String vorname, int telefonNummer, int ausweisNummer, String email,
-			int personal_id, String position, int sozialVersicherungsNummer, String benutzerKonto, String passwort) {
+	public Verwaltungspersonal(String name, String vorname, String telefonNummer, String ausweisNummer, String email,
+			String personal_id, String position, String sozialVersicherungsNummer, String benutzerKonto, String passwort) {
 		super(name, vorname, telefonNummer, ausweisNummer, email);
 		this.personal_id = personal_id;
 		this.position = position;
@@ -17,10 +17,10 @@ public class Verwaltungspersonal extends Person{
 		this.passwort = passwort;
 	}
 
-	public int getPersonal_id() {
+	public String getPersonal_id() {
 		return personal_id;
 	}
-	public void setPersonal_id(int personal_id) {
+	public void setPersonal_id(String personal_id) {
 		this.personal_id = personal_id;
 	}
 
@@ -31,10 +31,10 @@ public class Verwaltungspersonal extends Person{
 		this.position = position;
 	}
 
-	public int getSozialVersicherungsNummer() {
+	public String getSozialVersicherungsNummer() {
 		return sozialVersicherungsNummer;
 	}
-	public void setSozialVersicherungsNummer(int sozialVersicherungsNummer) {
+	public void setSozialVersicherungsNummer(String sozialVersicherungsNummer) {
 		this.sozialVersicherungsNummer = sozialVersicherungsNummer;
 	}
 
