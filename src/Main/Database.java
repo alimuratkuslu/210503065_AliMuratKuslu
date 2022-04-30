@@ -21,7 +21,7 @@ public class Database {
 	ResultSet rs;
 	PreparedStatement ps;
 
-	private Database() {
+	public Database() {
 
 	}
 
@@ -71,20 +71,21 @@ public class Database {
 		}
 	}
 
-	public Kunde getKundeObject(String kunde_id) {
-		if (kunde_id == " ") {
+	public Kunde getKundeObject(String kunde_konto, String kunde_pass) {
+		if (kunde_konto.equals("") && kunde_pass.equals("")) {
 			return null;
 		} else {
 			try {
 				Class.forName("postgresql-42.3.4.jar");
 				connection = this.getDBConnection();
-				ps = connection.prepareStatement("SELECT * FROM kunde WHERE KundeID=?");
-				ps.setString(6, kunde_id);
+				ps = connection.prepareStatement("SELECT * FROM kunde WHERE benutzerKonto=? AND passwort=?");
+				ps.setString(9, kunde_konto);
+				ps.setString(10, kunde_pass);
 				rs = ps.executeQuery();
 				if (rs.next()) {
 					return new Kunde(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
-							rs.getString(5), kunde_id, rs.getString(7), rs.getString(8), rs.getString(9),
-							rs.getString(10));
+							rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), kunde_konto,
+							kunde_pass);
 				} else {
 					return null;
 				}
