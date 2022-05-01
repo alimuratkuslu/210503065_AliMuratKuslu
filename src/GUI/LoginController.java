@@ -2,15 +2,12 @@ package GUI;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
-import Main.Database;
 import Main.Kunde;
+import Main.Verwaltungspersonal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -46,14 +43,18 @@ public class LoginController implements Initializable{
         String uname = txtuname.getText();
         String pass = txtpass.getText();
         UserDao dao = new UserDao();
+        PersonalDao pdao = new PersonalDao();
+        
         Kunde kunde = dao.getKundeObject(uname, pass);
-        if(kunde == null) {
+        Verwaltungspersonal personal = pdao.getPersonalObject(uname, pass);
+        if(kunde == null && personal == null) {
             JOptionPane.showMessageDialog(null, "Ungültiger Benutzername oder Passwort");
             txtuname.setText("");
             txtpass.setText("");
             txtuname.requestFocus();
-        } else {
-            try {
+        } 
+        else if(personal != null || kunde != null){
+        	try {
             	App.changeStage(event, "Dashboard.fxml", "Autohändler Dashboard");
                 /*JOptionPane.showMessageDialog(null, "Erfolgreich eingeloggt");
                 FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("LoginPage.fxml"));

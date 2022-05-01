@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RGB(230,230,230);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.addPersonalController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RGB(252, 186, 3);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.addPersonalController">
 
-    <VBox prefHeight="400.0" prefWidth="80.0" style="-fx-background-color: RGB(7,16,80);" />
+    <VBox prefHeight="400.0" prefWidth="80.0" style="-fx-background-color: RGB(25, 151, 151);" />
     <Label layoutX="125.0" layoutY="247.0" text="Name :" />
     <Label layoutX="125.0" layoutY="277.0" text="Vorname :" />
     <Label layoutX="125.0" layoutY="307.0" text="Telefon :" />
@@ -41,5 +41,5 @@
         </font>
     </Text>
     <Button fx:id="adduserbtn" layoutX="368.0" layoutY="470.0" mnemonicParsing="false" onAction="#addPersonal" text="Bestätigen" />
-    <Button fx:id="absagenbtn" layoutX="250.0" layoutY="470.0" mnemonicParsing="false" onAction="#redDashboard" prefHeight="25.0" prefWidth="78.0" text="Absagen" />
+    <Button fx:id="absagenbtn" layoutX="250.0" layoutY="470.0" mnemonicParsing="false" onAction="#redDashboard" prefHeight="25.0" prefWidth="78.0" text="Dashboard" />
 </AnchorPane>

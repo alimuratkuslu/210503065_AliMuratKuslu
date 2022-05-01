@@ -10,9 +10,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RGB(230,230,230);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ViewKundeController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RGB(252, 186, 3);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ViewKundeController">
     <children>
-        <VBox prefHeight="400.0" prefWidth="80.0" style="-fx-background-color: RGB(7,16,80);" />
+        <VBox prefHeight="400.0" prefWidth="80.0" style="-fx-background-color: RGB(25, 151, 151);" />
         <TableView fx:id="kundeView" layoutX="100.0" layoutY="100.0" opacity="0.9" prefHeight="260.0" prefWidth="800.0">
             <columns>
                 <TableColumn fx:id="ids" prefWidth="75.0" text="ID" />
@@ -35,6 +35,6 @@
             <Font name="Century Gothic" size="40.0" />
          </font>
       </Text>
-      <Button layoutX="450.0" layoutY="365.0" mnemonicParsing="false" onAction="#redDashboard" text="Zurück zum Dashboard" />
+      <Button layoutX="450.0" layoutY="365.0" mnemonicParsing="false" onAction="#redDashboard" text="Dashboard" />
     </children>
 </AnchorPane>
