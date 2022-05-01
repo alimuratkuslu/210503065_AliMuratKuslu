@@ -10,8 +10,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import Main.Database;
+import Main.Kunde;
 import Main.Person;
 import Main.Verwaltungspersonal;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class PersonalDao {
 	
@@ -113,6 +116,23 @@ public class PersonalDao {
                 return 0;
             }
         } catch (ClassNotFoundException | SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
+    
+    public ObservableList<Verwaltungspersonal> getPersonal(){
+        ObservableList<Verwaltungspersonal> personal = FXCollections.observableArrayList();
+        try{
+            Class.forName("org.postgresql.Driver");
+            connection = db.getDBConnection();
+            ps = connection.prepareStatement("SELECT * FROM personal");
+            rs = ps.executeQuery();
+            while (rs.next()){
+                Verwaltungspersonal person = new Verwaltungspersonal(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(8),rs.getString(1),rs.getString(6),rs.getString(7),rs.getString(9),rs.getString(10));
+                personal.add(person);
+            }
+            return personal;
+        } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
     }

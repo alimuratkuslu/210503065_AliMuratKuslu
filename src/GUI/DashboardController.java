@@ -14,6 +14,8 @@ public class DashboardController {
     @FXML
     public Button showkundenbtn;
     @FXML
+    public Button showpersonalbtn;
+    @FXML
     public Button addkundebtn;
     @FXML
     public ImageView imageView;
@@ -42,6 +44,15 @@ public class DashboardController {
     void redKunden(ActionEvent event) {
         try {
             App.changeStage(event, "viewKunde.fxml", "Kunden ansehen");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    @FXML
+    void redPersonal(ActionEvent event) {
+        try {
+            App.changeStage(event, "viewPersonal.fxml", "Verwaltungspersonal ansehen");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

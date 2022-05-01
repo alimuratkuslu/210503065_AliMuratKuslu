@@ -28,6 +28,10 @@
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
+      <Button fx:id="showpersonalbtn" layoutX="225.0" layoutY="240.0" mnemonicParsing="false" onAction="#redPersonal" opacity="0.9" prefHeight="24.0" prefWidth="170.0" text="VWpersonal ansehen">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font></Button>
       <Text layoutX="228.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
          <font>
             <Font name="Century Gothic" size="40.0" />
