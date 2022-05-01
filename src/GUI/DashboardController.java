@@ -10,20 +10,20 @@ import javafx.scene.image.ImageView;
 public class DashboardController {
 	
 	@FXML
-    public Button redaddpatientbtn;
+    public Button redaddkundebtn;
     @FXML
     public Button showpatientenbtn;
     @FXML
-    public Button adduserbtn;
+    public Button addkundebtn;
     @FXML
     public ImageView imageView;
     @FXML
     public Button redLoginbtn;
 
     @FXML
-    void redaddpatient(ActionEvent event) {
+    void redAddPersonal(ActionEvent event) {
         try {
-            App.changeStage(event, "addPatient.fxml", "Patient hinzufuegen");
+            App.changeStage(event, "addPersonal.fxml", "Verwaltungspersonal hinzufügen");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

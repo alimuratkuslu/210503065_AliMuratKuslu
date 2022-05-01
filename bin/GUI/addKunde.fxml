@@ -15,31 +15,31 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RGB(230,230,230);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.addKundeController">
 
     <VBox prefHeight="400.0" prefWidth="80.0" style="-fx-background-color: RGB(7,16,80);" />
-    <Label layoutX="125.0" layoutY="157.0" text="ID : " />
-    <Label layoutX="125.0" layoutY="187.0" text="Username :" />
-    <Label layoutX="125.0" layoutY="217.0" text="Password :" />
     <Label layoutX="125.0" layoutY="247.0" text="Name :" />
     <Label layoutX="125.0" layoutY="277.0" text="Vorname :" />
     <Label layoutX="125.0" layoutY="307.0" text="Telefon :" />
     <Label layoutX="125.0" layoutY="337.0" text="Ausweis :" />
     <Label layoutX="125.0" layoutY="367.0" text="Email :" />
+    <Label layoutX="125.0" layoutY="157.0" text="ID : " />
     <Label layoutX="125.0" layoutY="397.0" text="Versicherung :" />
     <Label layoutX="125.0" layoutY="427.0" text="Adresse :" />
-    <TextField fx:id="idaddkundetxt" layoutX="225.0" layoutY="155.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die ID des Kunde ein" />
-    <TextField fx:id="usernameaddkundetxt" layoutX="225.0" layoutY="185.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Username ein" />
-    <PasswordField fx:id="passwordadkunde" layoutX="226.0" layoutY="215.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Password ein" />
-    <TextField fx:id="nameaddkundetxt" layoutX="226.0" layoutY="245.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Name ein" />
-    <TextField fx:id="vornameaddkundetxt" layoutX="226.0" layoutY="275.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Vorname ein" />
-    <TextField fx:id="tnummeraddkundetxt" layoutX="226.0" layoutY="305.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Telefonnummer ein" />
-    <TextField fx:id="anummeraddkundetxt" layoutX="226.0" layoutY="335.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Ausweisnummer ein" />
-    <TextField fx:id="emailaddkundetxt" layoutX="226.0" layoutY="365.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Email ein" />
-    <TextField fx:id="versicherungaddkundetxt" layoutX="226.0" layoutY="395.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Versicherungstyp ein" />
-    <TextField fx:id="adresseaddkundetxt" layoutX="226.0" layoutY="425.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Adresse ein" />
+    <Label layoutX="125.0" layoutY="187.0" text="Username :" />
+    <Label layoutX="125.0" layoutY="217.0" text="Password :" />
+    <TextField fx:id="nameaddkundetxt" layoutX="226.0" layoutY="245.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Namen des Kundens ein" />
+    <TextField fx:id="vornameaddkundetxt" layoutX="226.0" layoutY="275.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Vornamen ein" />
+    <TextField fx:id="tnummeraddkundetxt" layoutX="226.0" layoutY="305.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Telefonnummer ein" />
+    <TextField fx:id="anummeraddkundetxt" layoutX="226.0" layoutY="335.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Ausweisnummer ein" />
+    <TextField fx:id="emailaddkundetxt" layoutX="226.0" layoutY="365.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die E-Mail-Adresse ein" />
+    <TextField fx:id="idaddkundetxt" layoutX="225.0" layoutY="155.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Kunden-ID ein" />
+    <TextField fx:id="versicherungaddkundetxt" layoutX="226.0" layoutY="395.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Versicherungsart ein" />
+    <TextField fx:id="adresseaddkundetxt" layoutX="226.0" layoutY="425.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Adresse ein" />
+    <TextField fx:id="usernameaddkundetxt" layoutX="225.0" layoutY="185.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Benutzernamen ein" />
+    <PasswordField fx:id="passwordadkunde" layoutX="226.0" layoutY="215.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie das Passwort ein "/>
     <Text layoutX="120.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kunde hinzufügen">
         <font>
             <Font name="Century Gothic" size="40.0" />
         </font>
     </Text>
-    <Button fx:id="adduserbtn" layoutX="368.0" layoutY="470.0" mnemonicParsing="false" onAction="#addKunde" text="Bestaetigen" />
+    <Button fx:id="adduserbtn" layoutX="368.0" layoutY="470.0" mnemonicParsing="false" onAction="#addKunde" text="Bestätigen" />
     <Button fx:id="absagenbtn" layoutX="250.0" layoutY="470.0" mnemonicParsing="false" onAction="#redDashboard" prefHeight="25.0" prefWidth="78.0" text="Absagen" />
 </AnchorPane>

@@ -77,7 +77,7 @@ public class Main {
 				String kun_id = sc.next();
 
 				if (Kunde.isIdValid(kun_id) && Kunde.isIdDigit(kun_id)) {
-					System.out.println("Geben Sie den Namen des Mitarbeiters ein");
+					System.out.println("Geben Sie den Namen des Kundens ein");
 					String kun_name = sc.next();
 
 					System.out.println("Geben Sie den Vornamen ein");

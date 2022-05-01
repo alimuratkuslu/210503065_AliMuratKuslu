@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RGB(230,230,230);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.addPersonalController">
+
+    <VBox prefHeight="400.0" prefWidth="80.0" style="-fx-background-color: RGB(7,16,80);" />
+    <Label layoutX="125.0" layoutY="247.0" text="Name :" />
+    <Label layoutX="125.0" layoutY="277.0" text="Vorname :" />
+    <Label layoutX="125.0" layoutY="307.0" text="Telefon :" />
+    <Label layoutX="125.0" layoutY="337.0" text="Ausweis :" />
+    <Label layoutX="125.0" layoutY="367.0" text="Email :" />
+    <Label layoutX="125.0" layoutY="157.0" text="ID : " />
+    <Label layoutX="125.0" layoutY="397.0" text="Versicherung :" />
+    <Label layoutX="125.0" layoutY="427.0" text="Position :" />
+    <Label layoutX="125.0" layoutY="187.0" text="Username :" />
+    <Label layoutX="125.0" layoutY="217.0" text="Password :" />
+    <TextField fx:id="nameaddpersonaltxt" layoutX="226.0" layoutY="245.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Namen des Personals ein" />
+    <TextField fx:id="vornameaddpersonaltxt" layoutX="226.0" layoutY="275.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Vornamen ein" />
+    <TextField fx:id="tnummeraddpersonaltxt" layoutX="226.0" layoutY="305.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Telefonnummer ein" />
+    <TextField fx:id="anummeraddpersonaltxt" layoutX="226.0" layoutY="335.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Ausweisnummer ein" />
+    <TextField fx:id="emailaddpersonaltxt" layoutX="226.0" layoutY="365.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die E-Mail-Adresse ein" />
+    <TextField fx:id="idaddpersonaltxt" layoutX="225.0" layoutY="155.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Personal-ID ein" />
+    <TextField fx:id="versicherungaddpersonaltxt" layoutX="226.0" layoutY="395.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Versicherungsnummer ein" />
+    <TextField fx:id="positionaddpersonaltxt" layoutX="226.0" layoutY="425.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Position ein" />
+    <TextField fx:id="usernameaddpersonaltxt" layoutX="225.0" layoutY="185.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Benutzernamen ein" />
+    <PasswordField fx:id="passwordaddpersonal" layoutX="226.0" layoutY="215.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie das Passwort ein "/>
+    <Text layoutX="120.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal hinzufügen">
+        <font>
+            <Font name="Century Gothic" size="40.0" />
+        </font>
+    </Text>
+    <Button fx:id="adduserbtn" layoutX="368.0" layoutY="470.0" mnemonicParsing="false" onAction="#addPersonal" text="Bestätigen" />
+    <Button fx:id="absagenbtn" layoutX="250.0" layoutY="470.0" mnemonicParsing="false" onAction="#redDashboard" prefHeight="25.0" prefWidth="78.0" text="Absagen" />
+</AnchorPane>

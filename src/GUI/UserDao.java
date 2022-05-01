@@ -91,21 +91,21 @@ public class UserDao {
             Class.forName("org.postgresql.Driver");
             connection = db.getDBConnection();
             ps = connection.prepareStatement("SELECT COUNT(*) FROM kunde WHERE kunde_id=?");
-            ps.setString(6, kunde_id);
+            ps.setString(1, kunde_id);
             rs = ps.executeQuery();
             rs.next();
-            if (rs.getString(6).equals(0)){
+            if (rs.getString(1) == "0"){
                 return -1;
             } else {
                 ps = connection.prepareStatement("INSERT INTO kunde VALUES (?,?,?,?,?,?,?,?,?,?)");
-                ps.setString(1,name);
-                ps.setString(2,vorname);
-                ps.setString(3,telefonNummer);
-                ps.setString(4,ausweisNummer);
-                ps.setString(5,email);
-                ps.setString(6,kunde_id);
-                ps.setString(7,versicherungsTyp);
-                ps.setString(8,adresse);
+                ps.setString(1,kunde_id);
+                ps.setString(2,name);
+                ps.setString(3,vorname);
+                ps.setString(4,telefonNummer);
+                ps.setString(5,ausweisNummer);
+                ps.setString(6,versicherungsTyp);
+                ps.setString(7,adresse);
+                ps.setString(8,email);
                 ps.setString(9,benutzerKonto);
                 ps.setString(10,passwort);
                 ps.executeUpdate();

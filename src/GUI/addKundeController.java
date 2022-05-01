@@ -77,6 +77,13 @@ public class addKundeController implements Initializable{
                 idaddkundetxt.setText("");
                 usernameaddkundetxt.setText("");
                 passwordadkunde.setText("");
+                nameaddkundetxt.setText("");
+                vornameaddkundetxt.setText("");
+                tnummeraddkundetxt.setText("");
+                anummeraddkundetxt.setText("");
+                emailaddkundetxt.setText("");
+                versicherungaddkundetxt.setText("");
+                adresseaddkundetxt.setText("");
             }
         }
     }
