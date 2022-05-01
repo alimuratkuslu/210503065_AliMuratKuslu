@@ -12,7 +12,7 @@ public class DashboardController {
 	@FXML
     public Button redaddkundebtn;
     @FXML
-    public Button showpatientenbtn;
+    public Button showkundenbtn;
     @FXML
     public Button addkundebtn;
     @FXML
@@ -39,9 +39,9 @@ public class DashboardController {
 
 
     @FXML
-    void redpatienten(ActionEvent event) {
+    void redKunden(ActionEvent event) {
         try {
-            App.changeStage(event, "viewPatienten.fxml", "Patienten ansehen");
+            App.changeStage(event, "viewKunde.fxml", "Kunden ansehen");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

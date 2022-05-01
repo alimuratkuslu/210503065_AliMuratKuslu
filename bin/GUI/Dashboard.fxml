@@ -15,7 +15,7 @@
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
-      <Button fx:id="showpatientenbtn" layoutX="225.0" layoutY="175.0" mnemonicParsing="false" onAction="#redpatienten" opacity="0.9" prefHeight="24.0" prefWidth="170.0" text="Patienten ansehen">
+      <Button fx:id="showkundenbtn" layoutX="225.0" layoutY="175.0" mnemonicParsing="false" onAction="#redKunden" opacity="0.9" prefHeight="24.0" prefWidth="170.0" text="Kunden ansehen">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
