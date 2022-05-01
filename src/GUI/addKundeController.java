@@ -5,13 +5,13 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -48,6 +48,7 @@ public class addKundeController implements Initializable{
 
     @FXML
     void addKunde() throws SQLException {
+    	JFrame frame = new JFrame("JOptionPane showMessageDialog example");
         int id = 0;
         try{
             id = Integer.parseInt(idaddkundetxt.getText());
@@ -71,9 +72,9 @@ public class addKundeController implements Initializable{
         } else {
             UserDao udao = new UserDao();
             int result = udao.saveKunde(name, vorname, telefonNummer, ausweisNummer, email, kunde_id, versicherungsTyp, adresse, benutzerKonto, passwort);
-            if (result == -1) JOptionPane.showMessageDialog(null, "Kunde existiert!");
+            if (result == -1) JOptionPane.showMessageDialog(frame, "Kunde existiert!");
             if (result == 0) {
-                JOptionPane.showMessageDialog(null, "Kunde hinzugefügt!");
+                JOptionPane.showMessageDialog(frame, "Kunde hinzugefügt!");
                 idaddkundetxt.setText("");
                 usernameaddkundetxt.setText("");
                 passwordadkunde.setText("");
