@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -48,7 +49,6 @@ public class addKundeController implements Initializable{
 
     @FXML
     void addKunde() throws SQLException {
-    	JFrame frame = new JFrame("JOptionPane showMessageDialog example");
         int id = 0;
         try{
             id = Integer.parseInt(idaddkundetxt.getText());
@@ -68,13 +68,15 @@ public class addKundeController implements Initializable{
         String passwort = passwordadkunde.getText();
 
         if (id == 0 || benutzerKonto.equals("") || passwort.equals("")) {
-            JOptionPane.showMessageDialog(null, "Einige Felder waren leer");
+        	new Alert(Alert.AlertType.ERROR, "Einige Felder waren leer!").showAndWait();
         } else {
             UserDao udao = new UserDao();
             int result = udao.saveKunde(name, vorname, telefonNummer, ausweisNummer, email, kunde_id, versicherungsTyp, adresse, benutzerKonto, passwort);
-            if (result == -1) JOptionPane.showMessageDialog(frame, "Kunde existiert!");
+            if (result == -1) {
+            	new Alert(Alert.AlertType.ERROR, "Kunde existiert!").showAndWait();
+            }
             if (result == 0) {
-                JOptionPane.showMessageDialog(frame, "Kunde hinzugefügt!");
+            	new Alert(Alert.AlertType.CONFIRMATION, "Kunde hinzugefügt!").showAndWait();
                 idaddkundetxt.setText("");
                 usernameaddkundetxt.setText("");
                 passwordadkunde.setText("");

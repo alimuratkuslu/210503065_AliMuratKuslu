@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -54,14 +55,16 @@ public class addPersonalController implements Initializable {
 		String passwort = passwordaddpersonal.getText();
 		
 		if (personal_id == "0" || benutzerKonto.equals("") || passwort.equals("")) {
-            JOptionPane.showMessageDialog(null, "Einige Felder waren leer");
+			new Alert(Alert.AlertType.ERROR, "Einige Felder waren leer!").showAndWait();
         } 
 		else {
             PersonalDao pdao = new PersonalDao();
             int result = pdao.savePersonal(name, vorname, telefonNummer, ausweisNummer, email, personal_id, position, sozialVersicherungsNummer, benutzerKonto, passwort);
-            if (result == -1) JOptionPane.showMessageDialog(null, "Verwaltungspersonal existiert!");
+            if (result == -1) {
+            	new Alert(Alert.AlertType.ERROR, "Verwaltungspersonal existiert!").showAndWait();
+            }
             if (result == 0) {
-                JOptionPane.showMessageDialog(null, "Verwaltungspersonal hinzugefügt!");
+            	new Alert(Alert.AlertType.ERROR, "Verwaltungspersonal hinzugefügt!").showAndWait();
                 idaddpersonaltxt.setText("");
                 usernameaddpersonaltxt.setText("");
                 passwordaddpersonal.setText("");
