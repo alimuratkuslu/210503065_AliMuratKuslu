@@ -23,11 +23,25 @@ public class addKundeController implements Initializable{
     @FXML
     public Button adduserbtn;
     @FXML
-    public TextField idaddusertxt;
+    public TextField idaddkundetxt;
     @FXML
-    public TextField usernameaddusertxt;
+    public TextField usernameaddkundetxt;
     @FXML
-    public PasswordField passwordadduser;
+    public PasswordField passwordadkunde;
+    @FXML
+    public TextField nameaddkundetxt;
+    @FXML
+    public TextField vornameaddkundetxt;
+    @FXML
+    public TextField tnummeraddkundetxt;
+    @FXML
+    public TextField anummeraddkundetxt;
+    @FXML
+    public TextField emailaddkundetxt;
+    @FXML
+    public TextField versicherungaddkundetxt;
+    @FXML
+    public TextField adresseaddkundetxt;
     @FXML
     public ImageView imageView;
 
@@ -36,21 +50,21 @@ public class addKundeController implements Initializable{
     void addKunde() throws SQLException {
         int id = 0;
         try{
-            id = Integer.parseInt(idaddusertxt.getText());
+            id = Integer.parseInt(idaddkundetxt.getText());
         } catch (Exception e){
-            JOptionPane.showMessageDialog(null, "ID nicht gueltig!");
+            JOptionPane.showMessageDialog(null, "ID nicht gültig!");
             return;
         }
-        String name = usernameaddusertxt.getText();
-        String vorname = passwordadduser.getText();
-        String telefonNummer = "";
-        String ausweisNummer = "";
-        String email = "";
-        String kunde_id = "";
-        String versicherungsTyp = "";
-        String adresse = "";
-        String benutzerKonto = "";
-        String passwort = "";
+        String name = nameaddkundetxt.getText();
+        String vorname = vornameaddkundetxt.getText();
+        String telefonNummer = tnummeraddkundetxt.getText();
+        String ausweisNummer = anummeraddkundetxt.getText();
+        String email = emailaddkundetxt.getText();
+        String kunde_id = idaddkundetxt.getText();
+        String versicherungsTyp = versicherungaddkundetxt.getText();
+        String adresse = adresseaddkundetxt.getText();
+        String benutzerKonto = usernameaddkundetxt.getText();
+        String passwort = passwordadkunde.getText();
 
         if (id == 0 || benutzerKonto.equals("") || passwort.equals("")) {
             JOptionPane.showMessageDialog(null, "Einige Felder waren leer");
@@ -60,9 +74,9 @@ public class addKundeController implements Initializable{
             if (result == -1) JOptionPane.showMessageDialog(null, "Kunde existiert!");
             if (result == 0) {
                 JOptionPane.showMessageDialog(null, "Kunde hinzugefügt!");
-                idaddusertxt.setText("");
-                usernameaddusertxt.setText("");
-                passwordadduser.setText("");
+                idaddkundetxt.setText("");
+                usernameaddkundetxt.setText("");
+                passwordadkunde.setText("");
             }
         }
     }
