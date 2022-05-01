@@ -5,14 +5,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RGB(230,230,230);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ControllerLogIn">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RGB(230,230,230);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LoginController">
    <children>
       <VBox prefHeight="400.0" prefWidth="100.0" style="-fx-background-color: RGB(7,16,80);" />
-      <ImageView fx:id="imageView" fitHeight="380.0" fitWidth="380.0" layoutX="115.0" layoutY="16.0" opacity="0.2">
-         <image>
-            <Image url="@img/dentist.png" />
-         </image>
-      </ImageView>
+      
       <Label layoutX="234.0" layoutY="73.0" text="Login">
          <font>
             <Font name="Century Gothic" size="54.0" />
@@ -23,13 +19,13 @@
             <Font name="Century Gothic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="270.0" layoutY="230.0" text="Passwort">
+      <Label layoutX="270.0" layoutY="230.0" text="Password">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>
       </Label>
       <TextField fx:id="txtuname" layoutX="226.0" layoutY="193.0" promptText="Enter Username" />
-      <PasswordField fx:id="txtpass" layoutX="226.0" layoutY="260.0" />
+      <PasswordField fx:id="txtpass" layoutX="226.0" layoutY="260.0" promptText="Enter Password" />
       <Button fx:id="btnlogin" layoutX="277.0" layoutY="300.0" mnemonicParsing="false" onAction="#login" text="Login" />
    </children>
 </AnchorPane>

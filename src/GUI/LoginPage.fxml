@@ -19,13 +19,13 @@
             <Font name="Century Gothic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="270.0" layoutY="230.0" text="Passwort">
+      <Label layoutX="270.0" layoutY="230.0" text="Password">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>
       </Label>
       <TextField fx:id="txtuname" layoutX="226.0" layoutY="193.0" promptText="Enter Username" />
-      <PasswordField fx:id="txtpass" layoutX="226.0" layoutY="260.0" />
+      <PasswordField fx:id="txtpass" layoutX="226.0" layoutY="260.0" promptText="Enter Password" />
       <Button fx:id="btnlogin" layoutX="277.0" layoutY="300.0" mnemonicParsing="false" onAction="#login" text="Login" />
    </children>
 </AnchorPane>

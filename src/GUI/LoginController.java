@@ -40,32 +40,29 @@ public class LoginController implements Initializable{
 
     @FXML
     public ImageView imageView;
-
-    Connection con;
-    PreparedStatement ps;
-    ResultSet rs;
     
     @FXML
     void login(ActionEvent event) {
-        String username = txtuname.getText();
-        String password = txtpass.getText();
-        Database im = new Database();
-        Kunde kunde = im.getKundeObject(username, password);
-        if (kunde == null) {
+        String uname = txtuname.getText();
+        String pass = txtpass.getText();
+        UserDao dao = new UserDao();
+        Kunde kunde = dao.getKundeObject(uname, pass);
+        if(kunde == null) {
             JOptionPane.showMessageDialog(null, "Ungültiger Benutzername oder Passwort");
             txtuname.setText("");
             txtpass.setText("");
             txtuname.requestFocus();
         } else {
             try {
-                JOptionPane.showMessageDialog(null, "Erfolgreich eingeloggt");
-                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("LoggedIn.fxml"));
+            	App.changeStage(event, "Dashboard.fxml", "Autohändler Dashboard");
+                /*JOptionPane.showMessageDialog(null, "Erfolgreich eingeloggt");
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("LoginPage.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
                 Node node = (Node) event.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
                 stage.setTitle("Autohändler");
                 stage.setScene(scene);
-                stage.show();
+                stage.show();*/
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
