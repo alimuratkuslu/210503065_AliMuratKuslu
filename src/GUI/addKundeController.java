@@ -30,13 +30,10 @@ public class addKundeController implements Initializable{
     public PasswordField passwordadduser;
     @FXML
     public ImageView imageView;
-    @FXML
-    public ChoiceBox<String> choicePerm;
-    public String[] choices = {"Rezeptionist", "Arzt"};
 
 
     @FXML
-    void addUser() throws SQLException {
+    void addKunde() throws SQLException {
         int id = 0;
         try{
             id = Integer.parseInt(idaddusertxt.getText());
@@ -62,7 +59,7 @@ public class addKundeController implements Initializable{
             int result = udao.saveKunde(name, vorname, telefonNummer, ausweisNummer, email, kunde_id, versicherungsTyp, adresse, benutzerKonto, passwort);
             if (result == -1) JOptionPane.showMessageDialog(null, "Kunde existiert!");
             if (result == 0) {
-                JOptionPane.showMessageDialog(null, "Kunde hinzugefuegt!");
+                JOptionPane.showMessageDialog(null, "Kunde hinzugefügt!");
                 idaddusertxt.setText("");
                 usernameaddusertxt.setText("");
                 passwordadduser.setText("");
@@ -81,8 +78,6 @@ public class addKundeController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        choicePerm.getItems().addAll(choices);
-        choicePerm.setValue(choices[0]);
     }
 	
 	
