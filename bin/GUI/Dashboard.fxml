@@ -32,6 +32,14 @@
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
+      <Button fx:id="redaddautos" layoutX="225.0" layoutY="270.0" mnemonicParsing="false" onAction="#redAddAutos" opacity="0.9" prefWidth="170.0" text="Autos hinzufügen">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font></Button>
+      <Button fx:id="showautos" layoutX="225.0" layoutY="300.0" mnemonicParsing="false" onAction="#redAutos" opacity="0.9" prefWidth="170.0" text="Autos ansehen">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font></Button>
       <Text layoutX="228.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
          <font>
             <Font name="Century Gothic" size="40.0" />

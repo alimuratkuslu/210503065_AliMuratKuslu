@@ -2,21 +2,21 @@ package Main;
 
 public class Auto {
 
-	private int auto_id;
+	private String auto_id;
 	private String name;
-	private double preis;
+	private String preis;
 	private String model;
 	private String fahrzeugTyp;
-	private int jahr;
+	private String jahr;
 	private String treibstoffArt;
 	private String getriebeTyp;
-	private int motorLeistung;
-	private int co2Emission;
-	private int beschleunigung;
+	private String motorLeistung;
+	private String co2Emission;
+	private String beschleunigung;
 	private String systemLeistung;
 
-	public Auto(int auto_id, String name, double preis, String model, String fahrzeugTyp, int jahr,
-			String treibstoffArt, String getriebeTyp, int motorLeistung, int co2Emission, int beschleunigung,
+	public Auto(String auto_id, String name, String preis, String model, String fahrzeugTyp, String jahr,
+			String treibstoffArt, String getriebeTyp, String motorLeistung, String co2Emission, String beschleunigung,
 			String systemLeistung) {
 		super();
 		this.auto_id = auto_id;
@@ -33,11 +33,11 @@ public class Auto {
 		this.systemLeistung = systemLeistung;
 	}
 
-	public int getAuto_id() {
+	public String getAuto_id() {
 		return auto_id;
 	}
 
-	public void setAuto_id(int auto_id) {
+	public void setAuto_id(String auto_id) {
 		this.auto_id = auto_id;
 	}
 
@@ -49,11 +49,11 @@ public class Auto {
 		this.name = name;
 	}
 
-	public double getPreis() {
+	public String getPreis() {
 		return preis;
 	}
 
-	public void setPreis(double preis) {
+	public void setPreis(String preis) {
 		this.preis = preis;
 	}
 
@@ -73,11 +73,11 @@ public class Auto {
 		this.fahrzeugTyp = fahrzeugTyp;
 	}
 
-	public int getJahr() {
+	public String getJahr() {
 		return jahr;
 	}
 
-	public void setJahr(int jahr) {
+	public void setJahr(String jahr) {
 		this.jahr = jahr;
 	}
 
@@ -97,27 +97,27 @@ public class Auto {
 		this.getriebeTyp = getriebeTyp;
 	}
 
-	public int getMotorLeistung() {
+	public String getMotorLeistung() {
 		return motorLeistung;
 	}
 
-	public void setMotorLeistung(int motorLeistung) {
+	public void setMotorLeistung(String motorLeistung) {
 		this.motorLeistung = motorLeistung;
 	}
 
-	public int getCo2Emission() {
+	public String getCo2Emission() {
 		return co2Emission;
 	}
 
-	public void setCo2Emission(int co2Emission) {
+	public void setCo2Emission(String co2Emission) {
 		this.co2Emission = co2Emission;
 	}
 
-	public int getBeschleunigung() {
+	public String getBeschleunigung() {
 		return beschleunigung;
 	}
 
-	public void setBeschleunigung(int beschleunigung) {
+	public void setBeschleunigung(String beschleunigung) {
 		this.beschleunigung = beschleunigung;
 	}
 

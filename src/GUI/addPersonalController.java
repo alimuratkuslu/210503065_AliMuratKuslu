@@ -42,7 +42,6 @@ public class addPersonalController implements Initializable {
 	
 	@FXML
 	void addPersonal() {
-		
 		String name = nameaddpersonaltxt.getText();
 		String vorname = vornameaddpersonaltxt.getText();
 		String telefonNummer = tnummeraddpersonaltxt.getText();

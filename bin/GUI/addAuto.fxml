@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RGB(252, 186, 3);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.addAutoController">
+
+    <VBox prefHeight="400.0" prefWidth="80.0" style="-fx-background-color: RGB(25, 151, 151);" />
+    <Label layoutX="125.0" layoutY="157.0" text="Auto-ID :" />
+    <Label layoutX="125.0" layoutY="187.0" text="Name :" />
+    <Label layoutX="125.0" layoutY="217.0" text="Preis :" />
+    <Label layoutX="125.0" layoutY="247.0" text="Model :" />
+    <Label layoutX="125.0" layoutY="277.0" text="FahrzeugTyp :" />
+    <Label layoutX="125.0" layoutY="307.0" text="Jahr : " />
+    <Label layoutX="125.0" layoutY="337.0" text="Treibstoffart :" />
+    <Label layoutX="125.0" layoutY="367.0" text="Getriebetyp :" />
+    <Label layoutX="125.0" layoutY="397.0" text="Motorleistung :" />
+    <Label layoutX="125.0" layoutY="427.0" text="CO2-Emission :" />
+    <Label layoutX="125.0" layoutY="457.0" text="Beschleunigung :" />
+    <Label layoutX="125.0" layoutY="487.0" text="Systemleistung :" />
+    <TextField fx:id="idaddautotxt" layoutX="226.0" layoutY="155.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die ID des Autos ein" />
+    <TextField fx:id="nameaddautotxt" layoutX="226.0" layoutY="185.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Namen des Autos ein" />
+    <TextField fx:id="preisaddauto" layoutX="226.0" layoutY="215.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Preis ein" />
+    <TextField fx:id="modeladdautotxt" layoutX="226.0" layoutY="245.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie das Modell ein" />
+    <TextField fx:id="fahrzeugtypaddautotxt" layoutX="226.0" layoutY="275.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Fahrzeugtyp ein" />
+    <TextField fx:id="jahraddautotxt" layoutX="225.0" layoutY="305.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie das Baujahr ein" />
+    <TextField fx:id="treibstoffrtaddautotxt" layoutX="226.0" layoutY="335.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Treibstoffart ein" />
+    <TextField fx:id="getriebetypaddautotxt" layoutX="226.0" layoutY="365.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den Getriebetyp ein" />
+    <TextField fx:id="motorladdautotxt" layoutX="225.0" layoutY="395.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Motorleistung ein" />
+    <TextField fx:id="co2addautotxt" layoutX="226.0" layoutY="425.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie den CO2-Ausstoß ein"/>
+    <TextField fx:id="beschaddautotxt" layoutX="226.0" layoutY="455.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Beschleunigung ein"/>
+    <TextField fx:id="systemladdautotxt" layoutX="226.0" layoutY="485.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Systemleistung ein"/>
+    <Text layoutX="120.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto hinzufügen">
+        <font>
+            <Font name="Century Gothic" size="40.0" />
+        </font>
+    </Text>
+    <Button fx:id="addautobtn" layoutX="368.0" layoutY="520.0" mnemonicParsing="false" onAction="#addAuto" text="Bestätigen" />
+    <Button fx:id="absagenbtn" layoutX="250.0" layoutY="520.0" mnemonicParsing="false" onAction="#redDashboard" prefHeight="25.0" prefWidth="78.0" text="Dashboard" />
+</AnchorPane>
