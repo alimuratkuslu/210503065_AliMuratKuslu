@@ -46,7 +46,7 @@ public class DashboardController {
     @FXML
     void redAutos(ActionEvent event) {
         try {
-            App.changeStage(event, "viewAuto.fxml", "Autos hinzufügen");
+            App.changeStage(event, "viewAuto.fxml", "Autos ansehen");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -55,7 +55,7 @@ public class DashboardController {
     @FXML
     void redAddAutos(ActionEvent event) {
         try {
-            App.changeStage(event, "addAuto.fxml", "Autos ansehen");
+            App.changeStage(event, "addAuto.fxml", "Autos hinzufügen");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

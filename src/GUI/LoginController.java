@@ -56,8 +56,14 @@ public class LoginController implements Initializable{
         } 
         else if(personal != null || kunde != null){
         	try {
-            	App.changeStage(event, "Dashboard.fxml", "Autohändler Dashboard");
-            	new Alert(Alert.AlertType.CONFIRMATION, "Erfolgreich Einloggen!").showAndWait();
+        		if(personal != null) {
+        			App.changeStage(event, "Dashboard.fxml", "Autohändler Dashboard");
+                	new Alert(Alert.AlertType.CONFIRMATION, "Erfolgreich Einloggen!").showAndWait();
+        		}
+        		else if(kunde != null) {
+        			App.changeStage(event, "KundeDashboard.fxml", "Autohändler Dashboard");
+        			new Alert(Alert.AlertType.CONFIRMATION, "Erfolgreich Einloggen!").showAndWait();
+        		}
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
