@@ -47,6 +47,27 @@ public class ADao {
         }
     }
     
+    public Auto getAutoByName(String name) {
+    	if (name.equals("")) {
+            return null;
+        } else {
+            try {
+                Class.forName("org.postgresql.Driver");
+                connection = db.getDBConnection();
+                ps = connection.prepareStatement("SELECT * FROM auto WHERE name=?");
+                ps.setString(1, name);
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    return new Auto(name, rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12));
+                } else {
+                    return null;
+                }
+            } catch (ClassNotFoundException | SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+    
     public int saveAuto(String auto_id, String name, String preis, String model, String fahrzeugTyp, String jahr,
 			String treibstoffArt, String getriebeTyp, String motorLeistung, String co2Emission, String beschleunigung, String systemLeistung) {
     	

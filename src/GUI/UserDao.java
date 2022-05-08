@@ -25,30 +25,35 @@ public class UserDao {
 
     Database db = new Database();
 
-	public boolean userExists(String name) throws SQLException {
+	public boolean userExists(String kunde_id) throws SQLException {
 		Connection connection = null;
 		PreparedStatement statement = null;
-		List<Person> person = new ArrayList<>();
+		List<Kunde> kunde = new ArrayList<>();
 
 		try {
 			connection = Database.getDBConnection();
 			connection.setAutoCommit(false);
-			String query = "SELECT name, vorname, telefonnummer, ausweisnummer, email FROM kunde WHERE name = ?";
+			String query = "SELECT name, vorname, telefonnummer, ausweisnummer, email, versicherungsTyp, adresse, kunde_id, benutzerkonto, passwort FROM kunde WHERE kunde_id = ?";
 			statement = connection.prepareStatement(query);
 			int counter = 1;
-			statement.setString(counter++, name);
+			statement.setString(counter++, kunde_id);
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
-				Person p = new Person(query, query, query, query, query);
-				p.setName(resultSet.getString(1));
-				p.setVorname(resultSet.getString(2));
-				p.setTelefonNummer(resultSet.getString(3));
-				p.setAusweisNummer(resultSet.getString(4));
-				p.setEmail(resultSet.getString(5));
-				person.add(p);
+				Kunde k = new Kunde(query, query, query, query, query, query, query, query, query, query);
+				k.setName(resultSet.getString(1));
+				k.setVorname(resultSet.getString(2));
+				k.setTelefonNummer(resultSet.getString(3));
+				k.setAusweisNummer(resultSet.getString(4));
+				k.setEmail(resultSet.getString(5));
+				k.setKunde_id(resultSet.getString(6));
+				k.setVersicherungsTyp(resultSet.getString(7));
+				k.setAdresse(resultSet.getString(8));
+				k.setBenutzerKonto(resultSet.getString(9));
+				k.setPasswort(resultSet.getString(10));
+				kunde.add(k);
 			}
 
-			return person.isEmpty() ? false : true;
+			return kunde.isEmpty() ? false : true;
 		} catch (SQLException exception) {
 			logger.log(Level.SEVERE, exception.getMessage());
 		} finally {
@@ -61,10 +66,10 @@ public class UserDao {
 			}
 		}
 
-		return person.isEmpty() ? false : true;
+		return kunde.isEmpty() ? false : true;
 	}
 	
-	public Kunde getKundeObject(String uname, String pass) {
+	public Kunde getKundeObject(String uname, String pass){
         if (uname.equals("") || pass.equals("")) {
             return null;
         } else {

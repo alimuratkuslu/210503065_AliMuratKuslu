@@ -29,7 +29,7 @@ public class KundeDashboardController {
     @FXML
     void redOnlyKunden(ActionEvent event) {
         try {
-            App.changeStage(event, "viewOnlyKunde.fxml", "Kunden ansehen");
+            App.changeStage(event, "viewOnlyKunde.fxml", "Kunden Informationen");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

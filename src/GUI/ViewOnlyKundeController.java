@@ -1,5 +1,4 @@
 package GUI;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -63,7 +62,14 @@ public class ViewOnlyKundeController implements Initializable{
 	
 	private void loadData() {
 		list = user.getKunden();
-		kundeView.getItems().addAll(list);
+		for(int i = 0; i < kundeView.getItems().size(); i++) {
+			Kunde k = kundeView.getItems().get(i);
+			if(k.getKunde_id().equals((kundeView.getItems().get(i)).getKunde_id())) {
+				kundeView.getItems().add(k);
+				break;
+			}
+			
+		}		
     }
 	
 	@FXML

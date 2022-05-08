@@ -5,13 +5,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import Main.Auto;
-import Main.Kunde;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ViewAutoController implements Initializable{
@@ -19,6 +20,11 @@ public class ViewAutoController implements Initializable{
 	ADao adao = new ADao();
 	ObservableList<Auto> list;
 	
+	@FXML
+    public Button btnsearch;
+    @FXML
+    public TextField txtname;
+    
 	@FXML
     private TableView<Auto> autoView;
     @FXML
@@ -71,6 +77,12 @@ public class ViewAutoController implements Initializable{
     private void loadData() {
         list = adao.getAuto();
         autoView.getItems().addAll(list);
+    }
+    
+    @FXML
+    private Auto search(ActionEvent event) {
+    	String auto_name = txtname.getText();
+    	return adao.getAutoObject(auto_name);
     }
 	
 	@FXML
