@@ -40,6 +40,14 @@
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
+      <Button fx:id="addterminbtn" layoutX="225.0" layoutY="330.0" mnemonicParsing="false" onAction="#redAddTermin" opacity="0.9" prefWidth="170.0" text="Termin hinzufügen">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font></Button>
+      <Button fx:id="addservicebtn" layoutX="225.0" layoutY="360.0" mnemonicParsing="false" onAction="#redAddService" opacity="0.9" prefWidth="170.0" text="Service hinzufügen">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font></Button>
       <Text layoutX="228.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
          <font>
             <Font name="Century Gothic" size="40.0" />

@@ -13,6 +13,10 @@ public class KundeDashboardController {
     @FXML
     public Button showautos;
     @FXML
+    public Button showtermin;
+    @FXML
+    public Button showservice;
+    @FXML
     public ImageView imageView;
     @FXML
     public Button redLoginbtn;
@@ -20,7 +24,7 @@ public class KundeDashboardController {
     @FXML
     void redAutos(ActionEvent event) {
         try {
-            App.changeStage(event, "viewAuto.fxml", "Autos ansehen");
+            App.changeStage(event, "viewAutoKunde.fxml", "Autos ansehen");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -30,6 +34,24 @@ public class KundeDashboardController {
     void redOnlyKunden(ActionEvent event) {
         try {
             App.changeStage(event, "viewOnlyKunde.fxml", "Kunden Informationen");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    @FXML
+    void redOnlyTermin(ActionEvent event) {
+        try {
+            App.changeStage(event, "viewOnlyTermin.fxml", "Termin Informationen");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    @FXML
+    void redOnlyService(ActionEvent event) {
+        try {
+            App.changeStage(event, "viewOnlyService.fxml", "Service Informationen");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

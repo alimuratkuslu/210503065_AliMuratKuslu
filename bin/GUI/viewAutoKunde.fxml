@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RGB(252, 186, 3);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ViewAutoController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RGB(252, 186, 3);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.viewAutoKundeController">
     <children>
         <VBox prefHeight="400.0" prefWidth="80.0" style="-fx-background-color: RGB(25, 151, 151);" />
         <TableView fx:id="autoView" layoutX="100.0" layoutY="100.0" opacity="0.9" prefHeight="260.0" prefWidth="800.0">

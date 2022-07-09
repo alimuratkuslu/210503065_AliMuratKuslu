@@ -22,6 +22,10 @@ public class DashboardController {
     @FXML
     public Button addkundebtn;
     @FXML
+    public Button addterminbtn;
+    @FXML
+    public Button addservicebtn;
+    @FXML
     public ImageView imageView;
     @FXML
     public Button redLoginbtn;
@@ -79,6 +83,43 @@ public class DashboardController {
             throw new RuntimeException(e);
         }
     }
+    
+    @FXML
+    void redAddTermin(ActionEvent event) {
+        try {
+            App.changeStage(event, "addTermin.fxml", "Termin hinzufügen");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    /*@FXML
+    void redTermin(ActionEvent event) {
+        try {
+            App.changeStage(event, "addTermin.fxml", "Termin hinzufügen");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }*/
+    
+    @FXML
+    void redAddService(ActionEvent event) {
+        try {
+            App.changeStage(event, "addService.fxml", "Service hinzufügen");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    /*@FXML
+    void redService(ActionEvent event) {
+        try {
+            App.changeStage(event, "addService.fxml", "Service hinzufügen");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }*/
+    
     @FXML
     private void redLogin(ActionEvent event){
         try {

@@ -8,15 +8,21 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ViewOnlyKundeController implements Initializable{
 	
-	UserDao user = new UserDao();
+	Database connectNow = new Database();
 	ObservableList<Kunde> list;
 	
+	@FXML
+	public Button getinfo;
+	@FXML
+    public TextField kundeid;
 	@FXML
     private TableView<Kunde> kundeView;
     @FXML
@@ -43,7 +49,6 @@ public class ViewOnlyKundeController implements Initializable{
 	@Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initiateColumns();
-        loadData();
 
     }
 	
@@ -60,16 +65,14 @@ public class ViewOnlyKundeController implements Initializable{
         passwort.setCellValueFactory(new PropertyValueFactory<>("passwort"));
     }
 	
-	private void loadData() {
-		list = user.getKunden();
-		for(int i = 0; i < kundeView.getItems().size(); i++) {
-			Kunde k = kundeView.getItems().get(i);
-			if(k.getKunde_id().equals((kundeView.getItems().get(i)).getKunde_id())) {
-				kundeView.getItems().add(k);
-				break;
-			}
-			
-		}		
+	@FXML
+	private void getInfo() {
+		
+		String id = kundeid.getText();
+		
+		list = connectNow.getKunden1(id);
+		kundeView.getItems().addAll(list);
+
     }
 	
 	@FXML

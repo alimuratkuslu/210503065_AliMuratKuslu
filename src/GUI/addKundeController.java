@@ -70,12 +70,12 @@ public class addKundeController implements Initializable{
         if (id == 0 || benutzerKonto.equals("") || passwort.equals("")) {
         	new Alert(Alert.AlertType.ERROR, "Einige Felder waren leer!").showAndWait();
         } else {
-            UserDao udao = new UserDao();
-            int result = udao.saveKunde(name, vorname, telefonNummer, ausweisNummer, email, kunde_id, versicherungsTyp, adresse, benutzerKonto, passwort);
-            if (result == -1) {
+        	Database connectNow = new Database();
+            boolean result = connectNow.saveKunde(name, vorname, telefonNummer, ausweisNummer, email, kunde_id, versicherungsTyp, adresse, benutzerKonto, passwort);
+            if (!result) {
             	new Alert(Alert.AlertType.ERROR, "Kunde existiert!").showAndWait();
             }
-            if (result == 0) {
+            if (result) {
             	new Alert(Alert.AlertType.CONFIRMATION, "Kunde hinzugefügt!").showAndWait();
                 idaddkundetxt.setText("");
                 usernameaddkundetxt.setText("");

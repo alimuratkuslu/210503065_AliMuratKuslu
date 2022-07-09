@@ -73,8 +73,8 @@ public class addAutoController implements Initializable{
         if (auto_id.equals("") || name.equals("")) {
         	new Alert(Alert.AlertType.ERROR, "Einige Felder waren leer!").showAndWait();
         } else {
-            ADao adao = new ADao();
-            int result = adao.saveAuto(auto_id, name, preis, model, fahrzeugTyp, jahr, treibstoffArt, getriebeTyp, motorLeistung, co2Emission, beschleunigung, systemLeistung);
+        	Database connectNow = new Database();
+            int result = connectNow.saveAuto(auto_id, name, preis, model, fahrzeugTyp, jahr, treibstoffArt, getriebeTyp, motorLeistung, co2Emission, beschleunigung, systemLeistung);
             if (result == -1) {
             	new Alert(Alert.AlertType.ERROR, "Auto existiert!").showAndWait();
             }

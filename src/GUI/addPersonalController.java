@@ -2,6 +2,7 @@ package GUI;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
@@ -57,13 +58,15 @@ public class addPersonalController implements Initializable {
 			new Alert(Alert.AlertType.ERROR, "Einige Felder waren leer!").showAndWait();
         } 
 		else {
-            PersonalDao pdao = new PersonalDao();
-            int result = pdao.savePersonal(name, vorname, telefonNummer, ausweisNummer, email, personal_id, position, sozialVersicherungsNummer, benutzerKonto, passwort);
-            if (result == -1) {
+			Database connectNow = new Database();
+            Connection connectDb = Database.getDBConnection();
+            boolean result = connectNow.savePersonal(name, vorname, telefonNummer, ausweisNummer, email, personal_id, position, sozialVersicherungsNummer, benutzerKonto, passwort);
+            
+            if (!result) {
             	new Alert(Alert.AlertType.ERROR, "Verwaltungspersonal existiert!").showAndWait();
             }
-            if (result == 0) {
-            	new Alert(Alert.AlertType.ERROR, "Verwaltungspersonal hinzugefügt!").showAndWait();
+            if (result) {
+            	new Alert(Alert.AlertType.CONFIRMATION, "Verwaltungspersonal hinzugefügt!").showAndWait();
                 idaddpersonaltxt.setText("");
                 usernameaddpersonaltxt.setText("");
                 passwordaddpersonal.setText("");

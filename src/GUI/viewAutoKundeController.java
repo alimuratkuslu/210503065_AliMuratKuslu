@@ -9,24 +9,18 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class ViewAutoController implements Initializable{
+public class viewAutoKundeController implements Initializable{
 	@FXML
 	Database connectNow = new Database();
 	ObservableList<Auto> list;
-	
-	@FXML
-    public Button btnsearch;
-    @FXML
-    public TextField getName;
+
 	@FXML
     private TableView<Auto> autoView;
-    @FXML
+	@FXML
     private TableColumn<Auto, String> id;
     @FXML
     private TableColumn<Auto, String> name;
@@ -59,7 +53,7 @@ public class ViewAutoController implements Initializable{
     }
     
     private void initiateColumns() {
-        id.setCellValueFactory(new PropertyValueFactory<>("auto_id"));
+    	id.setCellValueFactory(new PropertyValueFactory<>("auto_id"));
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         preis.setCellValueFactory(new PropertyValueFactory<>("preis"));
         model.setCellValueFactory(new PropertyValueFactory<>("model"));
@@ -81,18 +75,9 @@ public class ViewAutoController implements Initializable{
 	@FXML
     private void redDashboard(ActionEvent event){
         try {
-            App.changeStage(event,"Dashboard.fxml","Dashboard");
+            App.changeStage(event,"KundeDashboard.fxml","Dashboard");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-	
-	@FXML
-    private void getAutoName() {
-        String auto_name = getName.getText();
-        list = connectNow.getAutoName(auto_name);
-        list.addAll(connectNow.getAutoName(auto_name));
-        autoView.setItems(list);
-        getName.setText("");
     }
 }

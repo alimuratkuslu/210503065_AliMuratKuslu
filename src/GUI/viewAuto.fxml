@@ -32,14 +32,12 @@
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
-        </TableView>
+      </TableView>
       <Text layoutX="125.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autos">
          <font>
             <Font name="Century Gothic" size="40.0" />
          </font>
       </Text>
       <Button layoutX="450.0" layoutY="365.0" mnemonicParsing="false" onAction="#redDashboard" text="Dashboard" />
-      <Button fx:id="btnsearch" layoutX="700.0" layoutY="10.0" mnemonicParsing="false" onAction="#search" text="Search" />
-      <TextField fx:id="txtname" layoutX="730.0" layoutY="10.0" promptText="Enter Car's Name" />
     </children>
 </AnchorPane>

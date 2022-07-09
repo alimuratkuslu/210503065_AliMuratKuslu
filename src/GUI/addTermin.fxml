@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: RGB(252, 186, 3);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.addTerminController">
+
+    <VBox prefHeight="400.0" prefWidth="80.0" style="-fx-background-color: RGB(25, 151, 151);" />
+    <Label layoutX="125.0" layoutY="150.0" text="Termin ID :" />
+    <Label layoutX="125.0" layoutY="180.0" text="Kunde ID :" />
+    <Label layoutX="125.0" layoutY="210.0" text="Date :" />
+    <TextField fx:id="terminidtxt" layoutX="226.0" layoutY="150.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Termin-ID ein" />
+    <TextField fx:id="kundeidtxt" layoutX="226.0" layoutY="180.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Kundennummer ein" />
+    <TextField fx:id="datetxt" layoutX="226.0" layoutY="210.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie das Datum ein" />
+    <Text layoutX="120.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Termin hinzufügen">
+        <font>
+            <Font name="Century Gothic" size="40.0" />
+        </font>
+    </Text>
+    <Button fx:id="addterminbtn" layoutX="368.0" layoutY="300.0" mnemonicParsing="false" onAction="#addTermin" text="Bestätigen" />
+    <Button fx:id="absagenbtn" layoutX="250.0" layoutY="300.0" mnemonicParsing="false" onAction="#redDashboard" prefHeight="25.0" prefWidth="78.0" text="Dashboard" />
+</AnchorPane>
