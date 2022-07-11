@@ -6,19 +6,18 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import Main.Termin;
-import javafx.beans.property.ReadOnlyStringWrapper;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class viewOnlyTerminController implements Initializable{
+public class viewTerminController implements Initializable{
 	
 	Database connectNow = new Database();
 	ObservableList<Termin> list;
@@ -27,6 +26,10 @@ public class viewOnlyTerminController implements Initializable{
 	public Button getinfo;
 	@FXML
     public TextField terminid;
+	@FXML
+	public Button getinfo1;
+	@FXML
+    public TextField kundeid;
 	@FXML
     private TableView<Termin> terminView;
     @FXML
@@ -39,6 +42,7 @@ public class viewOnlyTerminController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initiateColumns();
+        loadData();
 
     }
 	
@@ -48,21 +52,48 @@ public class viewOnlyTerminController implements Initializable{
         date.setCellValueFactory(new PropertyValueFactory<>("date"));
     }
 	
+	private void loadData() {
+        list = connectNow.getTermine();
+        terminView.getItems().addAll(list);
+    }
+	
+	@FXML
+	private void deleteTermin() {
+		
+		String id = terminid.getText();
+		
+		if(connectNow.terminExists(id) == true) {
+			connectNow.löscheTermin(id);
+			terminid.setText("");
+			refreshTabelle();
+		}
+		else {
+			Alert alert = new Alert(Alert.AlertType.ERROR, "Termin existiert nicht!");
+		    alert.showAndWait();
+		}
+	}
+	
 	@FXML
 	private void getInfo() {
 		
-		String id = terminid.getText();
+		String id = kundeid.getText();
 		list = connectNow.getTermin(id); 
 		terminView.getItems().addAll(list);
     }
+	
+	@FXML
+    private void refreshTabelle() {
+        list = connectNow.getTermine();
+        loadData();
+        terminView.setItems(list);
+    }
 
 	@FXML
-    private void redKundeDashboard(ActionEvent event){
+    private void redDashboard(ActionEvent event){
         try {
-            App.changeStage(event,"KundeDashboard.fxml","Dashboard");
+            App.changeStage(event,"Dashboard.fxml","Dashboard");
         } catch (IOException e) {
             throw new RuntimeException(e);
         } 
     }
-
 }

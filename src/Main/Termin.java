@@ -16,16 +16,17 @@ public class Termin {
 		this.datum = datum;
 	}
 	
-	public Termin(String kunde_id, String datum, String termin_id) {
+	public Termin(String kunde_id, String date, String termin_id) {
 		super();
 		this.termin_id = termin_id;
 		this.kunde_id = kunde_id;
 		this.date = date;
 	}
-
+	
 	public String getDate() {
 		return date;
 	}
+
 	public void setDate(String date) {
 		this.date = date;
 	}

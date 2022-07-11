@@ -1,5 +1,6 @@
 package GUI;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -466,6 +467,7 @@ public class Database {
     public ObservableList<Termin> getTermin(String id){
     	
         ObservableList<Termin> termin = FXCollections.observableArrayList();
+        
         try{
             Class.forName("org.postgresql.Driver");
             connection = Database.getDBConnection();
@@ -473,10 +475,27 @@ public class Database {
             ps.setString(1, id);
             rs = ps.executeQuery();
             while (rs.next()){
-                Termin t = new Termin(rs.getString(2), rs.getDate(3).toString().formatted(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toString(), rs.getString(1));
+                Termin t = new Termin(rs.getString(2), rs.getDate(3).toString(), rs.getString(1));
                 termin.add(t);
             }
             return termin;
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    public ObservableList<Termin> getTermine(){
+        ObservableList<Termin> termine = FXCollections.observableArrayList();
+        try{
+            Class.forName("org.postgresql.Driver");
+            connection = Database.getDBConnection();
+            ps = connection.prepareStatement("SELECT * FROM termin");
+            rs = ps.executeQuery();
+            while (rs.next()){
+                Termin t = new Termin(rs.getString(2), rs.getDate(3).toString(), rs.getString(1));
+                termine.add(t);
+            }
+            return termine;
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
@@ -496,6 +515,25 @@ public class Database {
             ps.setString(1, termin_id);
             rs = ps.executeQuery();
             return rs.next();
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+	
+	public boolean löscheTermin(String termin_id) {
+    	
+    	Connection connection = null;
+		PreparedStatement statement = null;
+		connection = Database.getDBConnection();
+		
+        try {
+        	Class.forName("org.postgresql.Driver");
+        	connection = Database.getDBConnection();
+			String query = "DELETE FROM termin WHERE termin_id = ?";
+			statement = connection.prepareStatement(query);
+			statement.setString(1, termin_id);
+			statement.executeUpdate();
+			return true;
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
@@ -564,6 +602,42 @@ public class Database {
                  service.add(s);
              }
              return service;
+         } catch (ClassNotFoundException | SQLException e) {
+             throw new RuntimeException(e);
+         }
+     }
+     
+     public ObservableList<Service> getService1(){
+         ObservableList<Service> service = FXCollections.observableArrayList();
+         try{
+             Class.forName("org.postgresql.Driver");
+             connection = Database.getDBConnection();
+             ps = connection.prepareStatement("SELECT * FROM service ");
+             rs = ps.executeQuery();
+             while (rs.next()){
+                 Service s = new Service(rs.getString(1),rs.getString(2), rs.getString(3));
+                 service.add(s);
+             }
+             return service;
+         } catch (ClassNotFoundException | SQLException e) {
+             throw new RuntimeException(e);
+         }
+     }
+     
+     public boolean löscheService(String service_id) {
+     	
+     	Connection connection = null;
+ 		PreparedStatement statement = null;
+ 		connection = Database.getDBConnection();
+ 		
+         try {
+         	Class.forName("org.postgresql.Driver");
+         	connection = Database.getDBConnection();
+ 			String query = "DELETE FROM service WHERE service_id = ?";
+ 			statement = connection.prepareStatement(query);
+ 			statement.setString(1, service_id);
+ 			statement.executeUpdate();
+ 			return true;
          } catch (ClassNotFoundException | SQLException e) {
              throw new RuntimeException(e);
          }

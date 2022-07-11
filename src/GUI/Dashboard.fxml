@@ -16,35 +16,43 @@
             <Image url="@img/car.png"/>
          </image>
       </ImageView>
-      <Button fx:id="redaddkundebtn" layoutX="225.0" layoutY="140.0" mnemonicParsing="false" onAction="#redAddPersonal" opacity="0.9" prefWidth="170.0" text="Personal hinzufügen">
+      <Button fx:id="redaddkundebtn" layoutX="140.0" layoutY="140.0" mnemonicParsing="false" onAction="#redAddPersonal" opacity="0.9" prefWidth="170.0" text="Personal hinzufügen">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
-      <Button fx:id="addkundebtn" layoutX="225.0" layoutY="175.0" mnemonicParsing="false" onAction="#redAddKunde" opacity="0.9" prefHeight="24.0" prefWidth="170.0" text="Kunde hinzufügen">
+      <Button fx:id="addkundebtn" layoutX="140.0" layoutY="175.0" mnemonicParsing="false" onAction="#redAddKunde" opacity="0.9" prefHeight="24.0" prefWidth="170.0" text="Kunde hinzufügen">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
-      <Button fx:id="showkundenbtn" layoutX="225.0" layoutY="210.0" mnemonicParsing="false" onAction="#redKunden" opacity="0.9" prefHeight="24.0" prefWidth="170.0" text="Kunden ansehen">
+      <Button fx:id="showkundenbtn" layoutX="140.0" layoutY="210.0" mnemonicParsing="false" onAction="#redKunden" opacity="0.9" prefHeight="24.0" prefWidth="170.0" text="Kunden ansehen">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
-      <Button fx:id="showpersonalbtn" layoutX="225.0" layoutY="240.0" mnemonicParsing="false" onAction="#redPersonal" opacity="0.9" prefHeight="24.0" prefWidth="170.0" text="VWpersonal ansehen">
+      <Button fx:id="showpersonalbtn" layoutX="140.0" layoutY="240.0" mnemonicParsing="false" onAction="#redPersonal" opacity="0.9" prefHeight="24.0" prefWidth="170.0" text="Personal ansehen">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
-      <Button fx:id="redaddautos" layoutX="225.0" layoutY="270.0" mnemonicParsing="false" onAction="#redAddAutos" opacity="0.9" prefWidth="170.0" text="Autos hinzufügen">
+      <Button fx:id="redaddautos" layoutX="140.0" layoutY="270.0" mnemonicParsing="false" onAction="#redAddAutos" opacity="0.9" prefWidth="170.0" text="Autos hinzufügen">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
-      <Button fx:id="showautos" layoutX="225.0" layoutY="300.0" mnemonicParsing="false" onAction="#redAutos" opacity="0.9" prefWidth="170.0" text="Autos ansehen">
+      <Button fx:id="showautos" layoutX="140.0" layoutY="300.0" mnemonicParsing="false" onAction="#redAutos" opacity="0.9" prefWidth="170.0" text="Autos ansehen">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
-      <Button fx:id="addterminbtn" layoutX="225.0" layoutY="330.0" mnemonicParsing="false" onAction="#redAddTermin" opacity="0.9" prefWidth="170.0" text="Termin hinzufügen">
+      <Button fx:id="addterminbtn" layoutX="350.0" layoutY="140.0" mnemonicParsing="false" onAction="#redAddTermin" opacity="0.9" prefWidth="170.0" text="Termin hinzufügen">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
-      <Button fx:id="addservicebtn" layoutX="225.0" layoutY="360.0" mnemonicParsing="false" onAction="#redAddService" opacity="0.9" prefWidth="170.0" text="Service hinzufügen">
+      <Button fx:id="addservicebtn" layoutX="350.0" layoutY="170.0" mnemonicParsing="false" onAction="#redAddService" opacity="0.9" prefWidth="170.0" text="Service hinzufügen">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font></Button>
+      <Button fx:id="showtermin" layoutX="350.0" layoutY="200.0" mnemonicParsing="false" onAction="#redTermin" opacity="0.9" prefWidth="170.0" text="Termin ansehen">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font></Button>
+      <Button fx:id="showservice" layoutX="350.0" layoutY="230.0" mnemonicParsing="false" onAction="#redService" opacity="0.9" prefWidth="170.0" text="Service ansehen">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font></Button>
