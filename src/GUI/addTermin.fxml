@@ -20,7 +20,7 @@
     <Label layoutX="125.0" layoutY="210.0" text="Date :" />
     <TextField fx:id="terminidtxt" layoutX="226.0" layoutY="150.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Termin-ID ein" />
     <TextField fx:id="kundeidtxt" layoutX="226.0" layoutY="180.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die Kundennummer ein" />
-    <TextField fx:id="datetxt" layoutX="226.0" layoutY="210.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie das Datum ein" />
+    <TextField fx:id="datetxt" layoutX="226.0" layoutY="210.0" prefHeight="25.0" prefWidth="250.0" promptText="Datumsformat: YYYY-MM-DD" />
     <Text layoutX="120.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Termin hinzufügen">
         <font>
             <Font name="Century Gothic" size="40.0" />

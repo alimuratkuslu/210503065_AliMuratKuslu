@@ -24,7 +24,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
         </TableView>
-        <Button fx:id="getinfo" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#getInfo" prefHeight="25.0" prefWidth="84.0" text="KundeID" />
+        <Button fx:id="getinfo" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#getInfo" prefHeight="25.0" prefWidth="84.0" text="Suche" />
         <TextField fx:id="kundeid" layoutX="180.0" layoutY="20.0" prefHeight="25.0" prefWidth="250.0" promptText="KundeID" />
       <Text layoutX="125.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service Informationen">
          <font>

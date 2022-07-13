@@ -20,8 +20,6 @@ public class viewAutoKundeController implements Initializable{
 
 	@FXML
     private TableView<Auto> autoView;
-	@FXML
-    private TableColumn<Auto, String> id;
     @FXML
     private TableColumn<Auto, String> name;
     @FXML
@@ -53,7 +51,6 @@ public class viewAutoKundeController implements Initializable{
     }
     
     private void initiateColumns() {
-    	id.setCellValueFactory(new PropertyValueFactory<>("auto_id"));
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         preis.setCellValueFactory(new PropertyValueFactory<>("preis"));
         model.setCellValueFactory(new PropertyValueFactory<>("model"));

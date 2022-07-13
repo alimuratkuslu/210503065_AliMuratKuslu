@@ -77,7 +77,8 @@ public class viewTerminController implements Initializable{
 	private void getInfo() {
 		
 		String id = kundeid.getText();
-		list = connectNow.getTermin(id); 
+		list = connectNow.getTermin(id);
+		terminView.getItems().clear();
 		terminView.getItems().addAll(list);
     }
 	

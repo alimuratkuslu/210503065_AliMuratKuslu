@@ -69,8 +69,8 @@ public class ViewOnlyKundeController implements Initializable{
 	private void getInfo() {
 		
 		String id = kundeid.getText();
-		
 		list = connectNow.getKunden1(id);
+		kundeView.getItems().clear();
 		kundeView.getItems().addAll(list);
 
     }

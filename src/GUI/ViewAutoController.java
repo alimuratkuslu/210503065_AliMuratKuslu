@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -24,6 +25,10 @@ public class ViewAutoController implements Initializable{
     public Button btnsearch;
     @FXML
     public TextField getName;
+    @FXML
+	public Button deleteautobtn;
+	@FXML
+    public TextField autoid;
 	@FXML
     private TableView<Auto> autoView;
     @FXML
@@ -77,6 +82,22 @@ public class ViewAutoController implements Initializable{
         list = connectNow.getAuto1();
         autoView.getItems().addAll(list);
     }
+    
+    @FXML
+    public void deleteAuto(){
+    	
+    	String id = autoid.getText();
+    	
+    	if(connectNow.autoExists(id) == true) {
+    		connectNow.löscheAuto(id);
+    		autoid.setText("");
+    		refreshTabelle();
+    	}
+        else {
+		    Alert alert = new Alert(Alert.AlertType.ERROR, "Auto existiert nicht!");
+		    alert.showAndWait();
+		}
+    }
 	
 	@FXML
     private void redDashboard(ActionEvent event){
@@ -85,6 +106,13 @@ public class ViewAutoController implements Initializable{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+	
+	@FXML
+    private void refreshTabelle() {
+        list = connectNow.getAuto1();
+        loadData();
+        autoView.setItems(list);
     }
 	
 	@FXML

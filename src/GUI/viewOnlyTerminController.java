@@ -53,6 +53,7 @@ public class viewOnlyTerminController implements Initializable{
 		
 		String id = terminid.getText();
 		list = connectNow.getTermin(id); 
+		terminView.getItems().clear();
 		terminView.getItems().addAll(list);
     }
 

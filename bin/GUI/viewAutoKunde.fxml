@@ -16,7 +16,6 @@
         <VBox prefHeight="400.0" prefWidth="80.0" style="-fx-background-color: RGB(25, 151, 151);" />
         <TableView fx:id="autoView" layoutX="100.0" layoutY="100.0" opacity="0.9" prefHeight="260.0" prefWidth="800.0">
             <columns>
-                <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
                 <TableColumn fx:id="name" prefWidth="75.0" text="Name" />
                 <TableColumn fx:id="preis" prefWidth="75.0" text="Preis" />
                 <TableColumn fx:id="model" prefWidth="75.0" text="Model" />

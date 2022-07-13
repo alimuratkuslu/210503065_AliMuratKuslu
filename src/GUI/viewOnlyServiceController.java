@@ -49,8 +49,8 @@ public class viewOnlyServiceController implements Initializable{
 	private void getInfo() {
 		
 		String id = kundeid.getText();
-		
 		list = connectNow.getService(id);
+		serviceView.getItems().clear();
 		serviceView.getItems().addAll(list);
 
     }

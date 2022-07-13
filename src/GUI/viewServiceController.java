@@ -76,6 +76,7 @@ public class viewServiceController implements Initializable {
 		
 		String id = kundeid1.getText();
 		list = connectNow.getService(id);
+		serviceView.getItems().clear();
 		serviceView.getItems().addAll(list);
     }
     

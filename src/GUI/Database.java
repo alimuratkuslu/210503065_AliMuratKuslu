@@ -410,6 +410,25 @@ public class Database {
         }
     }
     
+public boolean löscheAuto(String auto_id) {
+    	
+    	Connection connection = null;
+		PreparedStatement statement = null;
+		connection = Database.getDBConnection();
+		
+        try {
+        	Class.forName("org.postgresql.Driver");
+        	connection = Database.getDBConnection();
+			String query = "DELETE FROM auto WHERE auto_id = ?";
+			statement = connection.prepareStatement(query);
+			statement.setString(1, auto_id);
+			statement.executeUpdate();
+			return true;
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
     private ObservableList<Auto> getAutos(String name, ObservableList<Auto> Autos) throws SQLException {
     	ps.setString(1,name);
         rs = ps.executeQuery();

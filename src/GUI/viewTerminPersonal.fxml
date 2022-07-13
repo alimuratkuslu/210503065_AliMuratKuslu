@@ -28,7 +28,7 @@
         <TextField fx:id="terminid" layoutX="180.0" layoutY="20.0" prefHeight="25.0" prefWidth="250.0" promptText="TerminID" />
         
         <Button fx:id="getinfo1" layoutX="450.0" layoutY="20.0" mnemonicParsing="false" onAction="#getInfo" prefHeight="25.0" prefWidth="84.0" text="Suche" />
-        <TextField fx:id="kundeid" layoutX="540.0" layoutY="20.0" prefHeight="25.0" prefWidth="250.0" promptText="Geben Sie die KundeID ein" />
+        <TextField fx:id="kundeid" layoutX="540.0" layoutY="20.0" prefHeight="25.0" prefWidth="250.0" promptText="KundeID" />
       <Text layoutX="125.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Termin Informationen">
          <font>
             <Font name="Century Gothic" size="40.0" />
